@@ -56,7 +56,8 @@ class ConflictoMaceda(Base):
 class TierrasTitulomerced(Base):
     __tablename__ = 'tierras_titulomerced'
 
-    region_id = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)  # Nueva columna 'id'
+    region_id = Column(Integer)
     region_nombre = Column(String)
     provincia_id = Column(Integer)
     provincia_nombre = Column(String)

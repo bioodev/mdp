@@ -19,6 +19,6 @@ def read_conflicto(skip: int = 0, limit: int = 100, db: Session = Depends(get_db
     return [ConflictoMaceda.from_orm(item) for item in items]
 
 @app.get("/tierras/", response_model=List[TierrasTitulomerced])
-def read_tierras(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
+def read_tierras(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     items = db.query(TierrasTitulomercedModel).offset(skip).limit(limit).all()
     return [TierrasTitulomerced.from_orm(item) for item in items]

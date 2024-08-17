@@ -86,10 +86,29 @@ class TierrasTitulomercedBase(BaseModel):
     tdm_perim: Optional[str]
     longitud_W: Optional[float]
     latitud_S: Optional[float]
+    region_id: Optional[int]  # Hacer opcional
+
+    @validator('provincia_id', 'comuna_id', 'tdm_año', 'region_id', pre=True, always=True)
+    def parse_int(cls, v):
+        if v == '' or v is None:
+            return None
+        try:
+            return int(v)
+        except ValueError:
+            return None
+
+    @validator('longitud_W', 'latitud_S', pre=True, always=True)
+    def parse_float(cls, v):
+        if v == '' or v is None:
+            return None
+        try:
+            return float(v)
+        except ValueError:
+            return None
 
 class TierrasTitulomerced(TierrasTitulomercedBase):
-    region_id: int
-
+    id: int  # Nueva columna 'id'
+    
     class Config:
         orm_mode = True
         from_attributes = True

@@ -6,7 +6,6 @@ blinker==1.7.0
 boto3==1.34.96
 botocore==1.34.96
 bottle==0.12.25
-Brlapi==0.8.3
 camelot-py==0.9.0
 cassandra-driver==3.29.0
 certifi==2020.6.20

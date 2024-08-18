@@ -7,16 +7,16 @@ from typing import List
 
 Base = declarative_base()
 
+
 class ConflictoMaceda(Base):
     __tablename__ = 'conflicto_maceda'
-
-    id = Column(Integer, primary_key=True, index=True, autoincrement=True)  # Nueva columna 'id'
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     id_evento = Column(Integer, nullable=True)
     id_evento_relacionado = Column(Integer, nullable=True)
     año = Column(Integer, nullable=True)
     mes = Column(Integer, nullable=True)
     trimestre = Column(Integer, nullable=True)
-    fecha_reportada = Column(String, nullable=True)  # Cambia a DateTime si estás usando datetime
+    fecha_reportada = Column(String, nullable=True)
     comuna = Column(String, nullable=True)
     provincia = Column(String, nullable=True)
     region = Column(String, nullable=True)
@@ -56,8 +56,7 @@ class ConflictoMaceda(Base):
 
 class TierrasTitulomerced(Base):
     __tablename__ = 'tierras_titulomerced'
-
-    id = Column(Integer, primary_key=True, index=True, autoincrement=True)  # Nueva columna 'id'
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     region_id = Column(Integer)
     region_nombre = Column(String)
     provincia_id = Column(Integer)
@@ -70,9 +69,9 @@ class TierrasTitulomerced(Base):
     tdm_original = Column(String)
     tdm_numero = Column(String)
     tdm_letra = Column(String)
-    tdm_area = Column(String)
-    tdm_geoarea = Column(String)
-    tdm_perim = Column(String)
+    tdm_area = Column(Float)
+    tdm_geoarea = Column(Float)
+    tdm_perim = Column(Float)
     longitud_W = Column(Float)
     latitud_S = Column(Float)
 

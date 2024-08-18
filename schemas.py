@@ -63,7 +63,7 @@ class ConflictoMacedaBase(BaseModel):
             return None
 
 class ConflictoMaceda(ConflictoMacedaBase):
-    id_evento: int
+    id: int  # Nueva columna 'id'
 
     class Config:
         orm_mode = True

@@ -10,7 +10,8 @@ Base = declarative_base()
 class ConflictoMaceda(Base):
     __tablename__ = 'conflicto_maceda'
 
-    id_evento = Column(Integer, primary_key=True, index=True)
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)  # Nueva columna 'id'
+    id_evento = Column(Integer, nullable=True)
     id_evento_relacionado = Column(Integer, nullable=True)
     año = Column(Integer, nullable=True)
     mes = Column(Integer, nullable=True)
